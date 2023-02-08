@@ -1,54 +1,46 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import SearchBar from '../SearchBar/SearchBar';
-import CurrentWeather from '../CurrentWeather/CurrentWeather';
-import Forecast from '../Forecast/Forecast';
+import SearchBar from "../SearchBar/SearchBar";
+import CurrentWeather from "../CurrentWeather/CurrentWeather";
+import Forecast from "../Forecast/Forecast";
 
-import { API_KEY } from '../../util/weatherstack';
-
+import { API_KEY } from "../../util/weatherstack";
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      weatherData: {}
-    }
-    this.search = this.search.bind(this)
+      weatherData: {},
+    };
+    this.search = this.search.bind(this);
   }
 
-
-  search(searchTerm){
-    const API_URL = `http://api.weatherstack.com/current?access_key=6916862fa90929f3d151e396c5d667f5&query=${searchTerm}`
+  search(searchTerm) {
+    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=167a9004313db26dbb400c1934df3405&units=metric`;
 
     fetch(API_URL)
-    .then(response => response.json())
-    .then(data => this.setState({weatherData: data}))
-    .catch(error => console.log(error))
-   }
+      .then((response) => response.json())
+      .then((data) => this.setState({ weatherData: data }))
+      .catch((error) => console.log(error));
+  }
 
-  render(){
-
+ 
+  render() {
     return (
-      
-      <div>        
-        <h1>
-          WeatherFinder
-        </h1>
+      <div>
+        <h1>WeatherFinder</h1>
         <div className="App">
-          <SearchBar onSearch={this.search}/>
+          <SearchBar onSearch={this.search} />
           <div className="App-weather">
-            <CurrentWeather 
-            currentWeatherIcons={this.state.weatherData.current.weather_icons[0]} 
-            locationName={this.state.weatherData.location.name}
-            currentWeatherDescription={weatherData.current.weather_descriptions[0]}
-            currentTemperature={this.state.weatherData.current.temperature} />
-            <Forecast 
-            locationName={this.state.weatherData.location.name}/>
+            <CurrentWeather
+              weatherData={this.state.weatherData}
+              />
+            {/* <Forecast weatherData={this.state.weatherData} /> */}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
