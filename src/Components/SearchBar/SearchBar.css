@@ -38,3 +38,8 @@
     background-color: rgb(248, 155, 145);
 }
 
+@media only screen and (max-width: 1020px) {
+    .SearchBar button{
+        margin: 10px;
+    }
+}

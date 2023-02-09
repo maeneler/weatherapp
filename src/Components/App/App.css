@@ -46,8 +46,18 @@ h2 {
 }
 
 @media only screen and (max-width: 1020px) {
-  .App-playlist {
+  .App{
     align-items: center;
     flex-direction: column;
+    padding: 15px;
+  }
+
+  .App-weather{
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .App-weather h2{
+    font-size: 16px;
   }
 }
