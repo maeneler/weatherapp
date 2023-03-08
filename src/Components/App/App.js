@@ -25,16 +25,17 @@ class App extends React.Component {
       .catch((error) => console.log(error));
   }
 
+
  
   render() {
     return (
-      <div>
+      <div className='page'>
         <h1>WeatherFinder</h1>
         <div className="App">
           <SearchBar onSearch={this.search} />
           <div className="App-weather">
             <CurrentWeather
-              weatherData={this.state.weatherData}
+              weatherData={this.state.weatherData}              
               />
             {/* <Forecast weatherData={this.state.weatherData} /> */}
           </div>
