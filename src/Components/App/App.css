@@ -8,10 +8,10 @@ html {
   font-size: 18px;
 }
 .page{
-  height: 100vh;
+  min-height: 100%;
   background-image: url('./cloud-blue-sky.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
 }
 
@@ -26,15 +26,15 @@ h1 {
 }
 
 .App {
-  height: 70%;
-  overflow: hidden;  
-  padding: 0 17% 10% 17%;  
+  overflow: hidden;
+  padding: 2% 17% 10% 17%;
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
 }
 
 
@@ -42,6 +42,7 @@ h1 {
   display: flex;
   justify-content: center;
   width: 100%;
+  gap: 10px;
 }
 
 @media only screen and (max-width: 1020px) {
