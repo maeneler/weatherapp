@@ -27,6 +27,10 @@ class App extends React.Component {
     ])
     .then(responses => Promise.all(responses.map(response => response.json())))
     .then(data => {
+      if (data[0].cod === '404' || data[1].cod === '404') {
+        throw new Error('City not found');
+      }
+
       const currentWeatherData = data[0];
       const forecastData = data[1];
 
@@ -52,7 +56,9 @@ class App extends React.Component {
 
       this.setState({weatherData: updatedCurrentWeatherData, forecastData: updatedForecastData})
     })
-
+    .catch(error => {
+      alert('Please enter a valid english city name')
+    })
   }
 
 
