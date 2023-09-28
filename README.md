@@ -1,3 +1,13 @@
+Erste Schritte mit API's und React
+
+Website kann hier abgerufen werden: https://manuelsweatherapp.netlify.app/
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
